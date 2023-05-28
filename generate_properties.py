@@ -1,3 +1,7 @@
+'''
+Hanjiang Hu, for VNN-COMP 2023
+May, 2023
+'''
 import argparse
 import numpy as np
 import os, shutil
