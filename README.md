@@ -37,6 +37,9 @@ with the camera at the movement origin. Besides, following [randgen](https://git
 
 ``python randgen.py ../onnx/XXX ../vnnlib/YYY output_file``
 
+## Running without custom projection OP
+If it is difficult to implement ``ProjectionOp`` in your method, please use ONNX and VNNLIB under `no_custom_OP` folder. The input of ONNX is the projected image with the shape of `1*3*32*56` and VNNLIB is the spec over all pixels of the image during the projection within camera perturbation radius of translation along z-axis or rotation along y-axis. The perturbation radius is tiny enough (e.g. 1e-5 m, 2.5e-4 deg),  so it is the ideally equivalent approximation of the one with custom projection OP. 
+
 ### Citation
 If you fine the repo useful, feel free to cite:
 

@@ -62,7 +62,7 @@ def main():
     parser.add_argument("--network_path", type=str, default='./onnx', help="Network to evaluate as .onnx file.")
     parser.add_argument("--spec_path", type=str, default='./vnnlib', help="Network to evaluate as .vnnlib file.")
     parser.add_argument("--instances", type=str, default="./instances.csv", help="Path to instances file")
-    parser.add_argument('--time_out', type=float, default=300.0, help='the mean used to normalize the data with')
+    parser.add_argument('--time_out', type=float, default=210.0, help='the mean used to normalize the data with')
 
     args = parser.parse_args()
 
