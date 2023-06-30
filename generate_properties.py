@@ -1,25 +1,30 @@
 '''
 Hanjiang Hu, for VNN-COMP 2023
-May, 2023
+June, 2023
 '''
 import argparse
 import numpy as np
 import os, shutil
 import glob
+import torch
 
 
 def write_vnn_spec(dataset, index, eps_factor, dir_path="./vnnlib", prefix="spec", n_class=20):
     onnx_path = dataset[index]
-    y = int(onnx_path.split('_')[-1][:-5])
-    proj_type = onnx_path.split('_')[1]
+    onnx_info = onnx_path.split('/')[-1][:-18]
+    y = int(onnx_info.split('_')[-1])
+    proj_type = onnx_info.split('_')[1]
     if proj_type == 'tz':
         eps = 0.01 * eps_factor
     elif proj_type == 'ry':
         eps = 0.00436 * eps_factor
     else:
         assert False, f'Unsupported projection type: {proj_type}'
-    x_lb = [-eps]
-    x_ub = [eps]
+    lb_path = "./spec_pt/spec_" + onnx_info + "_lb.pt"
+    ub_path = "./spec_pt/spec_" + onnx_info + "_ub.pt"
+    x_lb = torch.load(lb_path).reshape(-1).tolist()
+    x_ub = torch.load(ub_path).reshape(-1).tolist()
+
 
     if not os.path.exists(dir_path):
         os.mkdir(dir_path)
