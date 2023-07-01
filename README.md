@@ -48,6 +48,17 @@ with the camera at the movement origin. Besides, following [randgen](https://git
 ### Citation
 If you fine the repo useful, feel free to cite:
 
+H. Hu, C. Liu, and D. Zhao "Robustness Verification for Perception Models against Camera Motion Perturbations", ICML WFVML 2023
+```
+@inproceedings{hu2023robustness,
+  title={Robustness Verification for Perception Models against Camera Motion Perturbations},
+  author={Hu, Hanjiang and Liu, Changliu and Zhao, Ding},
+  booktitle={ICML Workshop on Formal Verification of Machine Learning (WFVML)},
+  year={2023}
+}
+```
+
+
 H. Hu, Z. Liu, L. Li, J. Zhu and D. Zhao "[Robustness Certification of Visual Perception Models via Camera Motion Smoothing](https://proceedings.mlr.press/v205/hu23b.html)", CoRL 2022
 ```
 @InProceedings{pmlr-v205-hu23b,
